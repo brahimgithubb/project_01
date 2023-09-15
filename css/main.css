@@ -3,6 +3,8 @@
     box-sizing : border-box ; 
     font-family: 'Rubik', sans-serif;
     font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -21,6 +23,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: relative;
+
 }
 
 
@@ -34,7 +39,7 @@
     .container { 
         width:530px ;
     }
-}
+  }
 
 @media (min-width : 768px)
 {
@@ -61,7 +66,7 @@
 
 
 
-
+/* this is the logo inside the container header */
 
 .container .logo {
     width: 65px;
@@ -70,66 +75,112 @@
 
 
 /* div container the ul and the icon  */
-.container .links   { 
 
-    position: relative;
-
-    display: flex;
-    justify-content:start ;
-
-    width : 40% ;
-    
+.container .links {
 
 }
-
 
 /* ul flex  */
 .container .links ul  {
 
-    display: flex;
-    width: 80%  ;
-    justify-content: space-between ;
+    position : absolute ;
+    right : 0; 
+    padding: 0;
+
+    background-color:#eee;
+    top : calc(100% + 20px ) ;
+    width : 30% ; 
     align-items: center;
 
+
     list-style: none;
+
+    display:none ; 
+
+
+
 }
 
-/* this is the li inside ul header container  */
 
+/*  add arrow in top right of the ul */
+.container .links ul::before{ 
+    content : " " ;
+    border:20px solid #eee ;
+    border-color: transparent transparent #eee transparent;
+ 
+    position: absolute;
+    right : 0; 
+    top : -40px;  
+   
+ 
+}
+
+.container:hover  .links ul {
+    display:block ;
+}
+
+/* style the li of the ul  */
+.container .links  ul li {
+    height: 40px ;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    
+
+
+
+
+}
+
+
+.container .links  ul li:not(:last-child) { 
+
+    border-bottom: 1px solid #333;
+}
+
+
+
+/* this is the li inside ul header container  */
 .container .links  ul li a  {
     text-decoration: none;
     color : black ;
  }
 
 
- /* make the icons with span */
+ /* span.icon iside the links div (links div contain ul and icon )  */
 
+.container .links .icon {
 
-
-
-.container .links .icon { 
     position : absolute ;
     display : flex ;
     flex-wrap: wrap;
 
     justify-content: end;
     width : 30px ; 
-    right : 0; 
+    right : 1%; 
     top : 50% ; 
 
     transform:  translateY(-50%);
+
+
+
 
     
 
 
 }
 
+/* global style for all  span's inside .icon */
 
 .container .links .icon span { 
     background-color: #333;
     margin-bottom : 6px ;
 }
 
+
+
+
+/* style for each one of the span's inside .icon */
 .container .links .icon span:first-child { 
     height : 2px ;
     width : 100% ; 
@@ -139,6 +190,13 @@
 .container .links .icon span:nth-child(2) { 
     height : 2px ;
     width : 60% ; 
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+/* add some transition  */
+.container .links:hover .icon span:nth-child(2){
+    width: 100%;
 }
 
 
@@ -146,3 +204,6 @@
     height : 2px ;
     width : 100% ; 
 }
+
+
+
