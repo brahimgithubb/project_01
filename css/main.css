@@ -25,7 +25,7 @@
 
 /* this is the container of the header  */
 
-.container {
+header .container {
 
     background-color: white ;
 
@@ -49,7 +49,7 @@
 @media (min-width : 576px)
 {
 
-    .container { 
+    header .container { 
         width:530px ;
     }
 
@@ -59,7 +59,7 @@
 @media (min-width : 768px)
 {
 
-    .container { 
+    header .container { 
         width:730px ;
     }
 }
@@ -67,14 +67,14 @@
 @media (min-width : 992px)
 {
 
-    .container { 
+    header .container { 
         width: 960px ;
     }
 }
 
 
 @media (min-width : 1200px) {
-    .container{
+    header .container{
         width: 95%;
     }
 }
@@ -83,20 +83,15 @@
 
 /* this is the logo inside the container header */
 
-.container .logo {
+header .container .logo {
     width: 65px;
     height: 31px;
 }
 
 
-/* div container the ul and the icon  */
-
-.container .links {
-
-}
 
 /* ul flex  */
-.container .links ul  {
+header .container .links ul  {
 
     position : absolute ;
     right : 0; 
@@ -118,7 +113,7 @@
 
 
 /*  add arrow in top right of the ul */
-.container .links ul::before{ 
+header .container .links ul::before{ 
     content : " " ;
     border:20px solid #eee ;
     border-color: transparent transparent #eee transparent;
@@ -130,12 +125,12 @@
  
 }
 
-.container:hover  .links ul {
+header .container:hover  .links ul {
     display:block ;
 }
 
 /* style the li of the ul  */
-.container .links  ul li {
+header .container .links  ul li {
     height: 40px ;
     display: flex;
     align-items: center;
@@ -149,7 +144,7 @@
 }
 
 
-.container .links  ul li:not(:last-child) { 
+header .container .links  ul li:not(:last-child) { 
 
     border-bottom: 1px solid #333;
 }
@@ -157,7 +152,7 @@
 
 
 /* this is the li inside ul header container  */
-.container .links  ul li a  {
+header .container .links  ul li a  {
     text-decoration: none;
     color : black ;
  }
@@ -165,7 +160,7 @@
 
  /* span.icon iside the links div (links div contain ul and icon )  */
 
-.container .links .icon {
+header .container .links .icon {
 
     position : absolute ;
     display : flex ;
@@ -188,7 +183,7 @@
 
 /* global style for all  span's inside .icon */
 
-.container .links .icon span { 
+header .container .links .icon span { 
     background-color: #333;
     margin-bottom : 6px ;
 }
@@ -197,13 +192,13 @@
 
 
 /* style for each one of the span's inside .icon */
-.container .links .icon span:first-child { 
+header .container .links .icon span:first-child { 
     height : 2px ;
     width : 100% ; 
 }
 
 
-.container .links .icon span:nth-child(2) { 
+header .container .links .icon span:nth-child(2) { 
     height : 2px ;
     width : 60% ; 
     transition-duration: 0.5s;
@@ -211,12 +206,12 @@
 }
 
 /* add some transition  */
-.container .links:hover .icon span:nth-child(2){
+header .container .links:hover .icon span:nth-child(2){
     width: 100%;
 }
 
 
-.container .links .icon span:nth-child(3) { 
+header .container .links .icon span:nth-child(3) { 
     height : 2px ;
     width : 100% ; 
 }
@@ -238,6 +233,7 @@
 
 
 }
+
 
 .landing::before { 
     content : "" ; 
@@ -281,4 +277,109 @@
 .landing .into_text p {
     color : #1d2225; 
 }
+
+
+
+/* container of the section after landing   */
+
+
+
+
+.features {
+    
+    padding-top:60px ; 
+    padding-bottom: 60px;
+
+
+}
+.features .container  {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(400px , 1fr));
+    
+    row-gap: 20px;
+
+    
+}
+
+
+
+/* 
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px , 1fr));
+    grid-template-rows: repeat(auto-fit , minmax(200px , 1fr));
+    row-gap: 20px;
+    column-gap: 3em;
+}*/
+
+.features .container .feat { 
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+    grid-template-columns: 80%;
+    grid-template-rows: 20% 10% 30%;
+
+    height: 250px;
+
+} 
+
+/* .features .container { 
+
+
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px , 1fr));
+
+    grid-template-rows: repeat(auto-fit,minmax(250px , 300px));
+
+    height: 900px;
+
+
+   
+} */
+
+
+
+
+
+
+
+/*  style every feauture */
+
+   
+
+
+
+
+ .features .container .feat:nth-child(2){
+
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.features .container.feat h1 {
+    font-weight: 800;
+    padding-bottom: 14px;
+}
+
+.features .container .feat p { 
+    text-align: center;
+    line-height: 1.6;
+} 
+
+
+/* changing font and color of icon's  */
+
+
+
+ .features .container .feat i { 
+    font-size : 39px ; 
+    color : var(--main-color) ;
+}   
+
+
 
