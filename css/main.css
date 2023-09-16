@@ -438,7 +438,7 @@ header .container .links .icon span:nth-child(3) {
 
 
 
-/*   */
+/* the child of the big container of the second section   */
 
 .services .container .services-contents {
     
@@ -467,22 +467,18 @@ header .container .links .icon span:nth-child(3) {
 
 
 
-/* responsive of  */
+/* responsive of  the grid box of .services-contents */
+
 @media (max-width : 1000px) {
 
     .services .container .services-contents {
         grid-template-columns: repeat(2,40%);
         grid-template-rows: repeat(2,40%);
     }
-    .services .container .services-contents  .two {
+    .services .container .services-contents  .three {
         display: none;
     }
 }
-
-
-
-
-
 
 
 @media (max-width : 750px) {
@@ -495,7 +491,7 @@ header .container .links .icon span:nth-child(3) {
         grid-template-rows: repeat(4,30%);
         height: 500px;
     }
-    .services .container .services-contents  .two {
+    .services .container .services-contents  .three {
         display: none;
     }
 }
@@ -512,7 +508,7 @@ header .container .links .icon span:nth-child(3) {
         height: 500px;
 
     }
-    .services .container .services-contents  .two {
+    .services .container .services-contents  .three {
         display: none;
     }
 
@@ -524,6 +520,8 @@ header .container .links .icon span:nth-child(3) {
 
 
 
+
+/* every div inside the grid of the .services-contents  */
 .services-contents div {
     display: grid;
     grid-template-columns: 10% 80%;
@@ -540,6 +538,7 @@ header .container .links .icon span:nth-child(3) {
     
 }
 
+
 .services-contents div i { 
 
     font-size : 30px ; 
@@ -550,15 +549,17 @@ header .container .links .icon span:nth-child(3) {
     font-size: 12px;
     text-align: start;
 }
-.services-contents .two {
+
+/* services-contents .three mean the div take 2 span and third order column  */
+.services-contents .three {
     grid-column: 3;
     grid-row: 1/span 2;
     position:relative ; 
 
 }
 
-
-.services-contents .two .form_1 {
+/* this is the first box with color : #eee */
+.services-contents .three .form_1 {
     position :absolute; 
     width : 80%; 
     height: 80%;
@@ -571,7 +572,9 @@ header .container .links .icon span:nth-child(3) {
 
 }
 
-.services-contents .two .form_2 {
+/* this is the seconde box with color : #333 */
+
+.services-contents .three .form_2 {
     position :absolute ;
     width : 20% ; 
     height: 100%;
