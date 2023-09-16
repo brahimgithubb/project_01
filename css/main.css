@@ -96,6 +96,8 @@ header .container .logo {
 header .container .links ul  {
 
     position : absolute ;
+    z-index: 2;
+
     right : 0; 
     padding: 0;
 
@@ -119,8 +121,8 @@ header .container .links ul::before{
     content : " " ;
     border:20px solid #eee ;
     border-color: transparent transparent #eee transparent;
- 
     position: absolute;
+    z-index: 2;
     right : 0; 
     top : -40px;  
    
@@ -248,29 +250,7 @@ header .container .links .icon span:nth-child(3) {
 }
 
 
-.landing:nth-child(1) {
-    animation-delay: 6s; /* 2s delay before animation + 4s animation duration */
-  }
-  
 
-@keyframes background_header {
-
-    0% {
-
-    background-image: url(../images/header_naru_sasuke.jpg);
-        
-    }
-
-    50% {
-    background-image: url(../images/naruto_sasuke.jpg);
-
-    }
-
-    100%{
-    background-image: url(../images/header_naru_sasuke.jpg);
-
-    }
-}
 
 
 @media (max-width :990px ) {
@@ -674,4 +654,45 @@ header .container .links .icon span:nth-child(3) {
 }
 
 
+/* footer style  */
 
+
+footer {
+    background-color : #2c4755 ;
+    height: 90px;
+    
+}
+
+footer div {
+    display: flex;
+    width: 80% ;
+    margin:auto ;
+    color : white ; 
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* make the font reponsive in the footer  */
+
+@media (max-width : 350px ) {
+
+    footer div {
+        font-size : 10px ; 
+    }
+}
+
+@media (max-width : 250px ) {
+
+    footer div {
+        font-size : 8px ; 
+    }
+}
+
+/* colorize the span iside the footerf */
+footer div span {
+    color : #14b9aa ;
+}
