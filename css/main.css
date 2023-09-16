@@ -15,6 +15,8 @@
 
 /* style of special-heading  */
 
+
+
 .special-heading { 
 
 
@@ -22,32 +24,9 @@
     font-size : 90px; 
     letter-spacing: -3px;
     margin:0 ;
+    text-align: center;
     
 }
-
-
-
-
-@media (max-width : 500px ) { 
-    .special-heading {
-        font-size: 70px;
-    }
-
-  
-   
-}
-
-@media (max-width : 320px ) {
-    
-    .special-heading + p {
-
-        
-    padding-left: 20%;
-}
-
-
-}
-
 
 
 .special-heading + p { 
@@ -55,14 +34,27 @@
 
     text-align: center;
 
-    margin-top : -30px; 
+    margin-top : -30px;
+    width : 90% ;
+    margin:-30px auto 0 ; 
 
-     color : #575757 ;
-
-
+    color : #575757 ;
+    
 
 }
 
+@media (max-width : 390px ){
+    .special-heading +p {
+        width: 130% ; 
+    }
+}
+
+@media (max-width : 310px )
+{
+    .special-heading + p {
+        width : 160%; 
+    }
+}
 
 /* style default  */
 
@@ -426,10 +418,11 @@ header .container .links .icon span:nth-child(3) {
 }
 
 
+/* the big container of the section services  */
+
 .services .container {
     
-    text-align:center ;
-    width : 70% ; 
+    width : 80% ; 
     margin : 10px auto 0px ;
 
 }
@@ -438,153 +431,74 @@ header .container .links .icon span:nth-child(3) {
 
 
 
-/* the child of the big container of the second section   */
 
-.services .container .services-contents {
-    
+
+
+
+
+
+
+
+/* styling testign */
+
+
+.ser-cont {
     display: grid;
-    grid-template-columns: repeat(3 , 30%);
-    grid-template-rows: 40% 40%;
+    grid-template-columns: repeat(auto-fit , minmax(345px , 1fr));
+    row-gap: 20px;
+    width: 100%;
+    margin : 20px auto 0px ;
+
+    
+}
+
+/* the image inside .three (the third column in the grid .serv-cont) */
+.ser-cont .three img {
+
+    width:100%; 
+    height: 100%  ;
+}
+
+
+/* style of the first tow column of the grid .serv-cont */
+.ser-cont .one {
+
+    display: grid;
+    grid-template-columns: 90% ;
+    grid-template-rows: repeat(2,40%);
+    justify-content: center;
+    align-content: space-around;
+
+    height :300px ;
+
+}
+
+/* .three it is the third column in the grid of .serv-cont */
+.ser-cont .three {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.ser-cont .one div {
+    display: grid;
+    grid-template-columns: 10% 85%;
+    grid-template-rows: 20% 60%;
+
     justify-content: space-around;
     align-content: space-around;
-    height: 300px;
-    width: 100%;
-    margin : 40px auto 0px ;
-    row-gap: 3%;
-
-
-
-
-   
-    
-
-
 
 }
 
 
 
+.ser-cont .one div i {
 
-
-
-/* responsive of  the grid box of .services-contents */
-
-@media (max-width : 1000px) {
-
-    .services .container .services-contents {
-        grid-template-columns: repeat(2,40%);
-        grid-template-rows: repeat(2,40%);
-    }
-    .services .container .services-contents  .three {
-        display: none;
-    }
-}
-
-
-@media (max-width : 750px) {
-
-
-    
-    .services .container .services-contents {
-        margin-top : 100px  ;
-        grid-template-columns: repeat(1,90%);
-        grid-template-rows: repeat(4,30%);
-        height: 500px;
-    }
-    .services .container .services-contents  .three {
-        display: none;
-    }
-}
-
-
-@media (max-width : 580px) {
-
-
-    .services .container .services-contents {
-        margin-top : 100px  ;
-
-        grid-template-columns: repeat(1,90%);
-        
-        height: 500px;
-
-    }
-    .services .container .services-contents  .three {
-        display: none;
-    }
-
-    .services .container .services-contents {
-        margin-bottom: 10px;
-    }
-    
-}
-
-
-
-
-/* every div inside the grid of the .services-contents  */
-.services-contents div {
-    display: grid;
-    grid-template-columns: 10% 80%;
-    grid-template-rows: 40% 40%;
-    height: 100%;
-    justify-content: space-between;
-    justify-items: start;
-    padding: 3px 7px ;
-
-
-    
-   
-
-    
-}
-
-
-.services-contents div i { 
-
-    font-size : 30px ; 
-    color : var(--main-color) ;
-}
-
-.services-contents div p {
-    font-size: 12px;
-    text-align: start;
-}
-
-/* services-contents .three mean the div take 2 span and third order column  */
-.services-contents .three {
-    grid-column: 3;
-    grid-row: 1/span 2;
-    position:relative ; 
-
-}
-
-/* this is the first box with color : #eee */
-.services-contents .three .form_1 {
-    position :absolute; 
-    width : 80%; 
-    height: 80%;
-    background-color: #eee;
-    top : 0 ; 
-    left :0 ;
-    transform: translate(10%,10%);
-    z-index: 2;
-
-
-}
-
-/* this is the seconde box with color : #333 */
-
-.services-contents .three .form_2 {
-    position :absolute ;
-    width : 20% ; 
-    height: 100%;
-    background-color: #333;
-    top:0; 
-    right:0; 
-    transform:translateX(-5%) ;
+    font-size: 30px;
+    color: var(--main-color);
 
 }
 
 
-
+ 
 
